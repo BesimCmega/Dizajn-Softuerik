@@ -34,8 +34,14 @@
     </div>
   </nav>
   
-
     <br><br>
+
+  <div class="flex justify-center">
+    <div>
+    <img class="h-80" src="{{ asset('images/cutepanda.png') }}" alt="">
+    </div>
+
+    <div class="pr-20">
   <form class="max-w-md mx-auto bg-blue-900">
     <div class="relative z-0 w-full mb-5 group">
         <input type="email" name="floating_email" id="floating_email" class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer" placeholder=" " required />
@@ -73,9 +79,12 @@
     <div class="h-96">
 
     </div>
+    </div>
 </form>
+
+</div>
   
-  <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
+  {{-- <footer class="bg-white rounded-lg shadow dark:bg-gray-900 m-4">
     <div class="w-full max-w-screen-xl mx-auto p-4 md:py-8">
         <div class="sm:flex sm:items-center sm:justify-between">
             <a href="https://flowbite.com/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
@@ -100,7 +109,7 @@
         <hr class="my-6 border-gray-200 sm:mx-auto dark:border-gray-700 lg:my-8" />
         <span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="https://flowbite.com/" class="hover:underline">Job-Application</a>. All Rights Reserved.</span>
     </div>
-</footer>
+</footer> --}}
 
 
 
