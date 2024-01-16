@@ -16,8 +16,8 @@ class UserController extends Controller
             'lastname' => ['required', 'min:3'],
             'email' => ['required', 'email', Rule::unique('users', 'email')],
             'password' => ['required', 'min:6'],
-            'confirm-password' => ['required', 'min:6'],
-            'roleId' => ['required']
+            'confirm-password' => ['required', 'same:password'],
+            'roleId' => 'required|in:2,3'
         ]);
 
         //Hash Password
@@ -29,7 +29,7 @@ class UserController extends Controller
         //Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created and logged in');
+        return redirect('/')->with('message', 'User created');
     }
 
 }

@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Roles;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -18,5 +19,21 @@ class DatabaseSeeder extends Seeder
         //     'name' => 'Test User',
         //     'email' => 'test@example.com',
         // ]);
+
+        Roles::create([
+            'role' => 'Admin'
+        ]);
+        
+        Roles::create([
+            'role' => 'Employee'
+        ]);
+
+        Roles::create([
+            'role' => 'Employer'
+        ]);
+
+       
     }
+
+
 }
