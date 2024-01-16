@@ -18,19 +18,42 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/sign-up', function () {
-    return view('sign-up');
-});
-
 // Show Register/Create Form
-// Route::get('/sign-up', [UserController::class, 'create'])->middleware('guest');
-
-// Route::get('/sign-in', function () {
-//     return view('sign-in');
-// });
+Route::get('/sign-up', [UserController::class, 'create'])->middleware('guest');
 
 
 // Show Login Form
 Route::get('/sign-in', [UserController::class, 'signIn'])->name('sign-in');
 
 Route::post('/users', [UserController::class, 'store']);
+
+// Log In User
+Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Log User Out
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
+
+
+//Dashboard Employee
+Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
+    
+    Route::resource('/employee', UserController::class)->names([
+        'index' => 'dashboards.employee.index',
+        'create'=> 'dashboards.employee.create',
+        'edit' => 'dashboards.employee.edit',
+        'update' => 'dashboards.employee.update',
+    ]);
+   
+});
+
+//Dashboard Employer
+Route::middleware(['auth', 'role:3'])->prefix('dashboards')->group(function () {
+    
+    Route::resource('/employer', UserController::class)->names([
+        'index' => 'dashboards.employer.index',
+        'create'=> 'dashboards.employer.create',
+        'edit' => 'dashboards.employer.edit',
+        'update' => 'dashboards.employer.update',
+    ]);
+   
+});

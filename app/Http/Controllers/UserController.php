@@ -15,7 +15,20 @@ class UserController extends Controller
         return view('sign-up');
     }
 
+    //Sign-In
+    public function signIn() {
+        return view('sign-in');
+    }
 
+    //Employee Dashboard
+    public function indexEmployee() {
+        return view('dashboards.employee.index');
+    }
+
+     //Employer Dashboard
+     public function indexEmployer() {
+        return view('dashboards.employer.index');
+    }
 
     //Store to Database
     public function store(Request $request) {
@@ -40,10 +53,17 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created');
     }
 
-    //Sign-In
-    public function signIn() {
-        return view('sign-in');
+    // Logout User
+    public function logout(Request $request) {
+        auth()->logout();
+
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
+
+        return redirect('/')->with('message', 'You have been logged out!');
+
     }
+
 
     // Authenticate User
     public function authenticate(Request $request) {
@@ -55,14 +75,14 @@ class UserController extends Controller
         if(auth()->attempt($formFields)) {
 
             $user = auth()->user();
-            if($user->roleId('1')){
-                return redirect()->route('dashboards.admin.index_admin')->with('message', 'Welcome Admin!');
+            if($user->roleId == 1){
+                return redirect()->route('dashboards.admin.index')->with('message', 'Welcome Admin!');
             }
-            else if ($user->roleId('2')) {
-                return redirect()->route('dashboards.employee.index_employee')->with('message', 'Welcome Employee!');
+            else if ($user->roleId == 2) {
+                return redirect()->route('dashboards.employee.index')->with('message', 'Welcome Employee!');
             }
-            else if($user->roleId('3')){
-                return redirect()->route('dashboards.employer.index_employer')->with('message', 'Welcome Employer!');
+            else if($user->roleId == 3){
+                return redirect()->route('dashboards.employer.index')->with('message', 'Welcome Employer!');
             }
            
             return redirect('/')->with('message', 'You are now logged in!');
