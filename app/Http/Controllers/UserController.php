@@ -50,7 +50,14 @@ class UserController extends Controller
         //Login
         auth()->login($user);
 
-        return redirect('/')->with('message', 'User created');
+        if($user->roleId == 2){
+            return redirect()->route('dashboards.employee.index')->with('message', 'User created');
+        }
+
+        else if($user->roleId == 3){
+            return redirect()->route('dashboards.employer.index')->with('message', 'User created');
+        }
+        
     }
 
     // Logout User
