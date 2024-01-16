@@ -13,7 +13,7 @@
         <div class="flex-col lg:flex lg:flex-2 lg:justify-end items-center">
         <li style="list-style-type: none" >
           <span class="text-4xl font-semibold text-white font-steelfish uppercase">
-            Welcome {{auth()->user()->name}} !
+            Welcome {{auth()->user()->firstname}} !
           </span>
         </li>
         <li style="list-style-type: none">

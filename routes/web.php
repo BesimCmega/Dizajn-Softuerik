@@ -16,7 +16,7 @@ use App\Http\Controllers\UserController;
 
 Route::get('/', function () {
     return view('index');
-});
+})->middleware('guest');
 
 // Show Register/Create Form
 Route::get('/sign-up', [UserController::class, 'create'])->middleware('guest');
