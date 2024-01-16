@@ -32,4 +32,30 @@ class UserController extends Controller
         return redirect('/')->with('message', 'User created');
     }
 
+    // Authenticate User
+    public function authenticate(Request $request) {
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
+
+        if(auth()->attempt($formFields)) {
+
+            $user = auth()->user();
+            if($user->roleId('1')){
+                return redirect()->route('dashboards.admin.index_admin')->with('message', 'Welcome Admin!');
+            }
+            else if ($user->roleId('2')) {
+                return redirect()->route('dashboards.employee.index_employee')->with('message', 'Welcome Employee!');
+            }
+            else if($user->roleId('3')){
+                return redirect()->route('dashboards.employer.index_employer')->with('message', 'Welcome Employer!');
+            }
+           
+            return redirect('/')->with('message', 'You are now logged in!');
+        }
+
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
+
 }

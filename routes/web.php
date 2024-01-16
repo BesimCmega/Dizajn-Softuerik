@@ -22,6 +22,9 @@ Route::get('/sign-up', function () {
     return view('sign-up');
 });
 
+// Show Register/Create Form
+// Route::get('/sign-up', [UserController::class, 'create'])->middleware('guest');
+
 // Route::get('/sign-in', function () {
 //     return view('sign-in');
 // });
