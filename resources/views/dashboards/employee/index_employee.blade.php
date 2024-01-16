@@ -7,6 +7,6 @@
     <title>Document</title>
 </head>
 <body>  
-    <h1>INEKCIIIIIIIIIIIIIII NORMAL</h1>
+    <h1>Karinboth</h1>
 </body>
 </html>
