@@ -29,13 +29,8 @@ Route::get('/sign-up', function () {
 //     return view('sign-in');
 // });
 
-//Sign-In
-Route::post('/sign-in', function () {
-    return view('sign-in');
-})->name('sign-in');
-
 
 // Show Login Form
-Route::get('/sign-in', [UserController::class, 'sign-in'])->name('sign-in');
+Route::get('/sign-in', [UserController::class, 'signIn'])->name('sign-in');
 
 Route::post('/users', [UserController::class, 'store']);

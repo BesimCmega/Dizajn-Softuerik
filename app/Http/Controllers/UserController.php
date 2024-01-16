@@ -9,7 +9,15 @@ use Illuminate\Validation\Rule;
 
 class UserController extends Controller
 {
-    //
+
+    // Show Register/Create Form
+    public function create() {
+        return view('sign-up');
+    }
+
+
+
+    //Store to Database
     public function store(Request $request) {
         $formFields = $request->validate([
             'firstname' => ['required', 'min:3'],
@@ -30,6 +38,11 @@ class UserController extends Controller
         auth()->login($user);
 
         return redirect('/')->with('message', 'User created');
+    }
+
+    //Sign-In
+    public function signIn() {
+        return view('sign-in');
     }
 
     // Authenticate User
