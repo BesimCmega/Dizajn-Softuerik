@@ -35,14 +35,15 @@
     </div>
   </nav>
   
-    <br><br>
+    <br><br><br>
 
   <div class="flex justify-center">
+
     <div>
-    <img class="h-80" src="{{ asset('images/panda2.jpg') }}" alt="">
+    <img class="h-80" src="{{ asset('images/panda2.png') }}" alt="">
     </div>
 
-    <div class="">
+    <div class="pr-20">
   <form action="/users/authenticate" method="POST" class="max-w-md mx-auto bg-blue-900">
     @csrf
     <div class="relative z-0 w-full mb-5 group">
