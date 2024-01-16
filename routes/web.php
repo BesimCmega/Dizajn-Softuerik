@@ -17,6 +17,10 @@ Route::get('/', function () {
     return view('index');
 });
 
+Route::get('/sign-up', function () {
+    return view('sign-up');
+});
+
 Route::get('/sign-in', function () {
     return view('sign-in');
 });
