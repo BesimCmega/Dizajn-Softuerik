@@ -4,10 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Employee</title>
 </head>
 <body>  
-    <h1>Karinbothhhhhhhhhhhhhhhhh</h1>
+    <h1>Employeeee</h1>
 
     @auth
         <div class="flex-col lg:flex lg:flex-2 lg:justify-end items-center">

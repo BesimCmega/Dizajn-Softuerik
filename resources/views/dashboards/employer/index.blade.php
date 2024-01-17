@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Employer</title>
 </head>
 <body>  
-    <h1>Kari Emplaoyerit</h1>
+    <h1>Employer</h1>
 
     @auth
         <div class="flex-col lg:flex lg:flex-2 lg:justify-end items-center">
         <li style="list-style-type: none" >
           <span class="text-4xl font-semibold text-white font-steelfish uppercase">
-            Welcome {{auth()->user()->name}} !
+            Welcome {{auth()->user()->firstname}} !
           </span>
         </li>
         <li style="list-style-type: none">
