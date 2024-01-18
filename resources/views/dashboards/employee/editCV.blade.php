@@ -40,11 +40,24 @@
                     @enderror
           
                 <label class="block mb-2 text-sm font-medium text-gray-900 dark:text-white" for="document">Insert your CV document here:</label>
-                <input src="{{$cv->document}}" class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="document" id="document" type="file">
-                    @error('document')
-                        <p class="text-red-500 text-xs mt-1">{{$message}}</p>
-                    @enderror
+                <input class="block w-full text-sm text-gray-900 border border-gray-300 rounded-lg cursor-pointer bg-gray-50 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400" name="document" id="documentInput" type="file">
 
+                <script>
+                    // JavaScript to update the displayed file name
+                    document.getElementById('documentInput').addEventListener('change', function () {
+                        var fileName = this.value.split("\\").pop();
+                        document.getElementById('documentDisplay').textContent = 'Selected file: ' + fileName;
+                    });
+                </script>
+
+                @error('document')
+                <p class="text-red-500 text-xs mt-1">{{$message}}</p>
+                @enderror
+
+                @if ($cv->document)
+                <p class="text-gray-300 mt-2">Existing file: {{ $cv->document }}</p>
+                @endif
+                   
                 <div class="flex pt-4 justify-center">
                     <button type="submit" class="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md w-full sm:w-auto px-28 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Update</button>
                 </div>

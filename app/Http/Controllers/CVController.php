@@ -51,17 +51,31 @@ class CvController extends Controller
         return view('dashboards.employee.editCV', compact('cv'));
     }
 
-    public function update(Request $request,Cv $cv){
-        $formFields=$request->validate([
+    public function update(Request $request, Cv $cv) {
+        // Validate the request data
+        $formFields = $request->validate([
             'lookingjob' => 'required',
             'experience' => 'required',
             'education' => 'required',
             'phonenumber' => 'required',
-            'document' => 'required'
+            'document' => 'nullable|string', // Assuming 'document' is a string field
         ]);
-
+    
+        // Check if a new document is provided
+        if ($request->filled('document')) {
+            // If yes, update 'document' field in both the model and formFields
+            $cv->update(['document' => $formFields['document']]);
+        } else {
+            // If no new document, remove 'document' from the formFields array
+            unset($formFields['document']);
+        }
+    
+        // Update the CV with the form fields
         $cv->update($formFields);
-
-        return to_route('dashboards.employee.index')->with('message', 'CV updated successfully!');
+    
+        return redirect()->route('dashboards.employee.index')->with('message', 'CV updated successfully!');
     }
+    
+    
+
 }
