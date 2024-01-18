@@ -30,8 +30,6 @@ class UserController extends Controller
         return view('dashboards.employer.index');
     }
 
-    
-
     //Store to Database
     public function store(Request $request) {
         $formFields = $request->validate([

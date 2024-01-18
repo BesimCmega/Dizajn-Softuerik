@@ -41,6 +41,7 @@ Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     Route::get('/employee', [UserController::class, 'indexEmployee'])->name('dashboards.employee.index');
     Route::get('/employee/cv', [CVController::class, 'cv'])->name('dashboards.employee.cv');
     Route::get('/employee/createCV', [CVController::class, 'createCV'])->name('dashboards.employee.createCV');
+    Route::post('/employee', [CVController::class, 'store'])->name('dashboards.employee.store');
     
    
 });

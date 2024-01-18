@@ -20,11 +20,14 @@ class CVController extends Controller
     public function store(Request $request){
 
         $formFields = $request->validate([
-            'testimonial' => 'required',
-            'celebrity_Name' => 'required'
+            'lookingjob' => 'required',
+            'experience' => 'required',
+            'education' => 'required',
+            'phonenumber' => 'required',
+            'document' => 'required'
 
         ]);
         CV::create($formFields);
-        return to_route('dashboards.aboutus.testimonials.testimonials_index')->with('message', 'Testimonial created successfully!');
+        return to_route('dashboards.employee.index')->with('message', 'CV created successfully!');
     }
 }
