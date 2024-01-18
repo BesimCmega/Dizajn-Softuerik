@@ -10,4 +10,9 @@ class CVController extends Controller
     public function cv(){
         return view('dashboards.employee.cv');
     }
+
+     //Create CV
+     public function createCV(){
+        return view('dashboards.employee.createCV');
+    }
 }
