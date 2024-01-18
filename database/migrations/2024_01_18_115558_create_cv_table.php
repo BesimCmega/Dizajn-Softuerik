@@ -15,14 +15,13 @@ return new class extends Migration
             $table->id();
             $table->string('lookingjob');
             $table->text('experience');
+            $table->text('education');
             $table->string('phonenumber');
             $table->string('document');
             $table->unsignedBigInteger('userid'); // Use unsignedBigInteger for foreign keys
             $table->timestamps();
 
-            $table->foreign('userid')
-                  ->references('id')
-                  ->on('users')  // Assuming your users table is named 'users'
+            $table->foreign('userid')->references('id')->on('users')  // Assuming your users table is named 'users'
                   ->onDelete('cascade');  // Adjust the onDelete behavior as needed
         
         });
