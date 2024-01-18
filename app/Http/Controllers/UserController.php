@@ -30,6 +30,8 @@ class UserController extends Controller
         return view('dashboards.employer.index');
     }
 
+    
+
     //Store to Database
     public function store(Request $request) {
         $formFields = $request->validate([
@@ -92,7 +94,7 @@ class UserController extends Controller
                 return redirect()->route('dashboards.employer.index')->with('message', 'Welcome Employer!');
             }
            
-            return redirect('/')->with('message', 'You are now logged in!');
+            
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

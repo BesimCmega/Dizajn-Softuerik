@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CVController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -38,6 +39,7 @@ Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     
     Route::get('/employee', [UserController::class, 'indexEmployee'])->name('dashboards.employee.index');
+    Route::get('/employee/cv', [CVController::class, 'cv'])->name('dashboards.employee.cv');
     
    
 });
