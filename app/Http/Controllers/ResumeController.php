@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 class ResumeController extends Controller
 {
     //Resume Dashboard
+    
     public function resume(){
         return view('dashboards.employer.resume');
     }
