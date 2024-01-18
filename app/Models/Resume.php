@@ -16,6 +16,7 @@ class Resume extends Model
         'skills',
         'workExperience',
         'phoneNumber',
+        'document',
         'userid'
     ];
 }

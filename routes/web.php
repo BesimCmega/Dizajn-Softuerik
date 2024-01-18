@@ -53,5 +53,6 @@ Route::middleware(['auth', 'role:3'])->prefix('dashboards')->group(function () {
     Route::get('/employer', [UserController::class, 'indexEmployer'])->name('dashboards.employer.index');
     Route::get('/employer/resume', [ResumeController::class, 'resume'])->name('dashboards.employer.resume');
     Route::get('/employer/createResume', [ResumeController::class, 'createResume'])->name('dashboards.employer.createResume');
+    Route::get('/employer/edit', [ResumeController::class, 'edit'])->name('dashboards.employer.edit');
     Route::post('/employer', [ResumeController::class, 'store'])->name('dashboards.employer.store');
 });

@@ -18,6 +18,7 @@ return new class extends Migration
             $table->text('skills');
             $table->string('workExperience');
             $table->string('phoneNumber');
+            $table->string('document');
             $table->unsignedBigInteger('userid');
             $table->timestamps();
 
