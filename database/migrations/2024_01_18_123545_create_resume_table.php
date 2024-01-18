@@ -18,7 +18,11 @@ return new class extends Migration
             $table->text('skills');
             $table->string('workExperience');
             $table->string('phoneNumber');
+            $table->unsignedBigInteger('userid');
             $table->timestamps();
+
+            $table->foreign('userid')->references('id')->on('users')  // Assuming your users table is named 'users'
+            ->onDelete('cascade');  // Adjust the onDelete behavior as needed
             //what company u from , phone number , what does your company do
         });
     }

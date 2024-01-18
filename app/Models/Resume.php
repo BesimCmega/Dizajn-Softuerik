@@ -9,12 +9,13 @@ class Resume extends Model
 {
     use HasFactory;
 
+    protected $table = 'resume';
     protected $fillable = [
         'company',
         'education',
         'skills',
         'workExperience',
-        'phoneNumber'
-        
+        'phoneNumber',
+        'userid'
     ];
 }

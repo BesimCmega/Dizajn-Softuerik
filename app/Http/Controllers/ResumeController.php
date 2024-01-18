@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Resume;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class ResumeController extends Controller
 {
@@ -24,10 +25,18 @@ class ResumeController extends Controller
             'education' => 'required',
             'skills' => 'required',
             'workExperience' => 'required',
-            'phonenumber' => 'required',
+            'phoneNumber' => 'required',
 
         ]);
-        Resume::create($formFields);
-        return to_route('dashboards.employer.index')->with('message', 'Resume created successfully!');
+
+        if (Auth::check()) {
+            // Use the authenticated user's ID for 'userid'
+            $formFields['userid'] = Auth::id();
+    
+            // Create the CV
+            Resume::create($formFields);
+    
+            return redirect()->route('dashboards.employer.index')->with('message', 'Resume created successfully!');
+        }
     }
 }
