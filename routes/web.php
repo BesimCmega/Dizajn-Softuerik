@@ -43,7 +43,8 @@ Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     Route::get('/employee/cv', [CvController::class, 'cv'])->name('dashboards.employee.cv');
     Route::get('/employee/createCV', [CvController::class, 'createCV'])->name('dashboards.employee.createCV');
     Route::post('/employee', [CvController::class, 'store'])->name('dashboards.employee.store');
-    
+    Route::get('/employee/{cv}/editCV', [CvController::class, 'edit'])->name('dashboards.employee.editCV');
+    Route::put('/employee/{cv}', [CvController::class, 'update'])->name('dashboards.employee.update');
    
 });
 

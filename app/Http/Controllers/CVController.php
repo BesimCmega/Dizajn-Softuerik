@@ -43,7 +43,25 @@ class CvController extends Controller
             }
 
     // If not authenticated, redirect to login
-    return redirect()->route('login')->with('error', 'Please log in to create a CV.');
+    return redirect()->route('dashboards.employee.cv')->with('error', 'Please log in to create a CV.');
 
+    }
+
+    public function edit(Cv $cv) {
+        return view('dashboards.employee.editCV', compact('cv'));
+    }
+
+    public function update(Request $request,Cv $cv){
+        $formFields=$request->validate([
+            'lookingjob' => 'required',
+            'experience' => 'required',
+            'education' => 'required',
+            'phonenumber' => 'required',
+            'document' => 'required'
+        ]);
+
+        $cv->update($formFields);
+
+        return to_route('dashboards.employee.index')->with('message', 'CV updated successfully!');
     }
 }
