@@ -11,7 +11,7 @@
     <div class="flex justify-start pt-2 pl-2"><a class="px-8 py-1 text-blue-900 text-md bg-white hover:bg-blue-400 rounded-md" href="{{ route('dashboards.employer.resume') }}">← Back</a></div>
     
     <div class="flex flex-col items-center justify-center ">
-        <form method="POST" action="{{ route('dashboards.employer.store'), $resume->id}}">
+        <form method="POST" action="{{ route('dashboards.employer.update'), $resume->id}}">
         @csrf
             <h1 class="text-center text-gray-300 text-3xl font-bold pb-2">Edit your Resume</h1>
            

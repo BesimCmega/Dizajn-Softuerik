@@ -44,4 +44,19 @@ class ResumeController extends Controller
             return redirect()->route('dashboards.employer.index')->with('message', 'Resume created successfully!');
         }
     }
+
+    public function update(Request $request, Resume $resume){
+        $formFields=$request->validate([
+            'company' => 'required',
+            'education' => 'required',
+            'skills' => 'required',
+            'workExperience' => 'required',
+            'phonenumber' => 'required',
+            'document' => 'required'
+        ]);
+
+        $resume->update($formFields);
+
+        return to_route('dashboards.employer.index')->with('message', 'Resume updated successfully!');
+    }
 }
