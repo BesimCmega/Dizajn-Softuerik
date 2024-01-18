@@ -11,7 +11,7 @@
     <div class="flex justify-start p-2"><a class="px-8 py-2 text-blue-900 text-md bg-white hover:bg-blue-400 rounded-md" href="{{ route('dashboards.employee.cv') }}">← Back</a></div>
 
     <div class="flex flex-col items-center justify-center ">
-            <form action="">
+            <form method="POST" action="">
                 <h1 class="text-center text-gray-300 text-3xl font-bold pb-4">Create your CV</h1>
                 <div>
                     <label for="lookingjob" class="block pb-2 text-md font-medium text-gray-900 dark:text-white">What job your looking for?</label>
