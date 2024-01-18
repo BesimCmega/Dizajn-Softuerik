@@ -4,6 +4,7 @@ namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
 use App\Models\Cv;
+use App\Models\Resume;
 use Laravel\Sanctum\HasApiTokens;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -51,5 +52,10 @@ class User extends Authenticatable
     public function cv()
     {
         return $this->hasOne(Cv::class, 'userid');
+    }
+    
+    public function resume()
+    {
+        return $this->hasOne(Resume::class, 'userid');
     }
 }
