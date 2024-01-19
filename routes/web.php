@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CvController;
 use App\Http\Controllers\UserController;
@@ -36,6 +37,18 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 
+//Dashboard Admin
+Route::middleware(['auth', 'role:1'])->prefix('dashboards')->group(function () {
+    
+    Route::get('/admin', [AdminController::class, 'indexAdmin'])->name('dashboards.admin.index');
+    Route::get('/admin/users', [AdminController::class, 'indexUsers'])->name('dashboards.admin.users.users_index');
+    Route::get('/admin/users/create', [AdminController::class, 'createUser'])->name('dashboards.admin.users.create');
+    Route::get('/admin/users/edit', [AdminController::class, 'edit'])->name('dashboards.admin.users.edit');
+    Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('dashboards.admin.users.destroy');
+    Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('dashboards.admin.users.show');
+    
+});
+
 //Dashboard Employee
 Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     
@@ -47,6 +60,9 @@ Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     Route::put('/employee/{cv}', [CvController::class, 'update'])->name('dashboards.employee.update');
    
 });
+
+
+
 
 //Dashboard Employer
 Route::middleware(['auth', 'role:3'])->prefix('dashboards')->group(function () {
