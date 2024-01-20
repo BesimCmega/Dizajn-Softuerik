@@ -43,6 +43,7 @@ Route::middleware(['auth', 'role:1'])->prefix('dashboards')->group(function () {
     Route::get('/admin', [AdminController::class, 'indexAdmin'])->name('dashboards.admin.index');
     Route::get('/admin/users', [AdminController::class, 'indexUsers'])->name('dashboards.admin.users.users_index');
     Route::get('/admin/users/create', [AdminController::class, 'createUser'])->name('dashboards.admin.users.create');
+    Route::post('/users', [AdminController::class, 'storeInAdmin'])->name('dashboards.admin.users.storeInAdmin');
     Route::get('/admin/users/edit', [AdminController::class, 'edit'])->name('dashboards.admin.users.edit');
     Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('dashboards.admin.users.destroy');
     Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('dashboards.admin.users.show');

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Validation\Rule;
 
 class AdminController extends Controller
 {
@@ -44,5 +45,26 @@ class AdminController extends Controller
 
     public function show(User $user){
     return view('dashboards.admin.users.users_index', compact('user'));
+    }
+
+    //Store to Database
+    public function storeinAdmin(Request $request) {
+        $formFields = $request->validate([
+            'firstname' => ['required', 'min:3'],
+            'lastname' => ['required', 'min:3'],
+            'email' => ['required', 'email', Rule::unique('users', 'email')],
+            'password' => ['required', 'min:6'],
+            'confirm-password' => ['required', 'same:password'],
+            'roleId' => 'required|in:2,3'
+        ]);
+
+        //Hash Password
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        // Create User
+        $user = User::create($formFields);
+
+        return to_route('dashboards.admin.users.users_index')->with('message', 'User created successfully!');
+        
     }
 }
