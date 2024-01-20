@@ -62,6 +62,9 @@ Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     Route::get('/employee/{cv}/editCV', [CvController::class, 'edit'])->name('dashboards.employee.editCV');
     Route::put('/employee/{cv}', [CvController::class, 'update'])->name('dashboards.employee.update');
    
+    Route::get('/employee/card1', [CvController::class, 'card1'])->name('dashboards.employee.card1');
+    Route::get('/employee/card2', [CvController::class, 'card2'])->name('dashboards.employee.card2');
+    Route::get('/employee/card3', [CvController::class, 'card3'])->name('dashboards.employee.card3');
 });
 
 //Dashboard Employer
