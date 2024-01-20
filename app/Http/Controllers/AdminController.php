@@ -67,4 +67,37 @@ class AdminController extends Controller
         return to_route('dashboards.admin.users.users_index')->with('message', 'User created successfully!');
         
     }
+
+    //Update to Database
+    public function update(Request $request, User $user) {
+        
+        if($request->input('roleId') == 2 && $user->resume){
+            $user->resume->delete();
+        }
+
+        if($request->input('roleId') == 3 && $user->cv){
+            $user->cv->delete();
+        }
+   
+
+        $formFields = $request->validate([
+            'firstname' => ['required', 'min:3'],
+            'lastname' => ['required', 'min:3'],
+            'email' => ['required', 'email'],
+            'password' => ['required', 'min:6'],
+            'confirm-password' => ['required', 'same:password'],
+            'roleId' => 'required|in:2,3'
+        ]);
+
+        //Hash Password
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        
+
+        // Create User
+        $user->update($formFields);
+
+        return to_route('dashboards.admin.users.users_index')->with('message', 'User created successfully!');
+        
+    }
 }
