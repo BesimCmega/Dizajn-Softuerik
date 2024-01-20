@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\Cv;
+use App\Models\Resume;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -77,12 +78,26 @@ class CvController extends Controller
     }
 
     public function card1(){
-        return view('dashboards.employee.card1');
+        if(auth()->user()->cv){
+            return view('dashboards.employee.card1');
+        }else{
+            return view('dashboards.employee.cv');
+        }
     }
+
     public function card2(){
-        return view('dashboards.employee.card2');
+        if(auth()->user()->cv){
+            return view('dashboards.employee.card2');
+        }else{
+            return view('dashboards.employee.cv');
+        }
     }
+
     public function card3(){
-        return view('dashboards.employee.card3');
+        if(auth()->user()->cv){
+            return view('dashboards.employee.card3');
+        }else{
+            return view('dashboards.employee.cv');
+        }
     }
 }
