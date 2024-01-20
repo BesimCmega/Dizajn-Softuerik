@@ -11,9 +11,9 @@
     <x-layouts.employer-navbar/>
 
     @if(auth()->user()->resume)
-        <div class="flex flex-col items-center justify-center pt-32 text-3xl text-gray-400">
+        <div class="flex flex-col items-center justify-center pt-32 text-2xl text-gray-400">
             <div class="flex font-bold pb-6">
-                <h1>Your Resume</h1>
+                <h1 class="text-3xl">Your Resume</h1>
             </div>
             <div class="flex">
                 <span class="block pb-2 font-medium dark:text-white">Your Company: </span> <span class="block pb-2 pl-2 font-medium dark:text-white">  {{auth()->user()->resume->company}}</span>
@@ -34,7 +34,7 @@
             <div class="flex">
                 <span class="block pb-2 font-medium dark:text-white">Your Resume Document: </span> <span class="block pb-2 pl-2 font-medium dark:text-white">  {{auth()->user()->resume->document}}</span>
             </div>
-            <button class="text-blue-400 bg-transparent border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-20 py-3 rounded outline-none focus:outline-none mb-1 ease-linear transition-all duration-150">
+            <button class="text-white  bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md w-full sm:w-auto px-28 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"><i class="fa-solid fa-pencil"></i>
                <a href="{{ route('dashboards.employer.edit', ['resume' => auth()->user()->resume]) }}">Edit</a>
             </button>
         </div>
