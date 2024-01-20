@@ -13,12 +13,8 @@ class ResumeController extends Controller
         return view('dashboards.employer.resume');
     }
 
-    public function edit(){
-        return view('dashboards.employer.edit');
-    }
-
-     //Create Resume
-     public function createResume(){
+      //Create Resume
+    public function createResume(){
         return view('dashboards.employer.createResume');
     }
 
@@ -30,7 +26,7 @@ class ResumeController extends Controller
             'skills' => 'required',
             'workExperience' => 'required',
             'phoneNumber' => 'required',
-            'document' => 'required'
+            'document' => 'nullable|string'
 
         ]);
 
@@ -45,18 +41,33 @@ class ResumeController extends Controller
         }
     }
 
+
+    public function edit(Resume $resume) {
+        return view('dashboards.employer.edit', compact('resume'));
+    }
+
+
     public function update(Request $request, Resume $resume){
-        $formFields=$request->validate([
+        $formFields = $request->validate([
             'company' => 'required',
             'education' => 'required',
             'skills' => 'required',
             'workExperience' => 'required',
-            'phonenumber' => 'required',
-            'document' => 'required'
+            'phoneNumber' => 'required',
+            'document' => 'nullable|string'
         ]);
 
+        if ($request->filled('document')) {
+            // If yes, update 'document' field in both the model and formFields
+            $resume->update(['document' => $formFields['document']]);
+        } else {
+            // If no new document, remove 'document' from the formFields array
+            unset($formFields['document']);
+        }
+    
+        // Update the CV with the form fields
         $resume->update($formFields);
-
+    
         return to_route('dashboards.employer.index')->with('message', 'Resume updated successfully!');
     }
 }

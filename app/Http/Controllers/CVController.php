@@ -75,7 +75,4 @@ class CvController extends Controller
     
         return redirect()->route('dashboards.employee.index')->with('message', 'CV updated successfully!');
     }
-    
-    
-
 }

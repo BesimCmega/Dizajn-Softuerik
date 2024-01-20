@@ -35,7 +35,7 @@
                 <span class="block pb-2 font-medium dark:text-white">Your Resume Document: </span> <span class="block pb-2 pl-2 font-medium dark:text-white">  {{auth()->user()->resume->document}}</span>
             </div>
             <button class="text-blue-400 bg-transparent border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-20 py-3 rounded outline-none focus:outline-none mb-1 ease-linear transition-all duration-150">
-               <a href="/dashboards/employer/edit">Edit</a>
+               <a href="{{ route('dashboards.employer.edit', ['resume' => auth()->user()->resume]) }}">Edit</a>
             </button>
         </div>
     @else
