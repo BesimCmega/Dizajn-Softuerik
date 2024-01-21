@@ -6,4 +6,5 @@
       </div>
     </div>
   </div>
+  <x-flash-message />
 </x-side-dashboard>

@@ -6,9 +6,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employee</title>
     @vite('resources/css/app.css')
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-blue-900">
-    
     <x-layouts.employee-navbar/>
     <br>
 
@@ -134,11 +134,8 @@
             <a href= "{{ route('dashboards.employee.card2') }}">Learn More</a>
           </button>
           </div>
-        </div>
-    
-       
-          
-        </div>
-
+        </div>    
+      </div>
+        <x-flash-message />
 </body>
 </html>

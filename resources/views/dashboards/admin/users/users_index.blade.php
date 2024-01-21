@@ -1,5 +1,6 @@
 
 @vite('resources/css/app.css')
+<script src="//unpkg.com/alpinejs" defer></script>
 <div>
     <div class="flex justify-center fixed">
         <x-side-dashboard/>
@@ -75,3 +76,4 @@
     </div>
     </div>
 </div>
+<x-flash-message />

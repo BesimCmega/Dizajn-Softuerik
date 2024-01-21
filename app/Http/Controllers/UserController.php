@@ -51,11 +51,11 @@ class UserController extends Controller
         auth()->login($user);
 
         if($user->roleId == 2){
-            return redirect()->route('dashboards.employee.index')->with('message', 'User created');
+            return redirect()->route('dashboards.employee.index')->with('message', 'You\'ve registered as an employee successfully!');
         }
 
         else if($user->roleId == 3){
-            return redirect()->route('dashboards.employer.index')->with('message', 'User created');
+            return redirect()->route('dashboards.employer.index')->with('message', 'You\'ve registered as an employer successfully!');
         }
         
     }

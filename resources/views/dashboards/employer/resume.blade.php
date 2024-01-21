@@ -6,6 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Resume</title>
     @vite('resources/css/app.css')
+    <script src="//unpkg.com/alpinejs" defer></script>
 </head>
 <body class="bg-blue-900">
     <x-layouts.employer-navbar/>
@@ -49,6 +50,6 @@
     @endif
 
 </button>
-
+    <x-flash-message />
 </body>
 </html>

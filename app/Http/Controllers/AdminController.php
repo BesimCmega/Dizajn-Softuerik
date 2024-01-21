@@ -97,7 +97,7 @@ class AdminController extends Controller
         // Create User
         $user->update($formFields);
 
-        return to_route('dashboards.admin.users.users_index')->with('message', 'User created successfully!');
+        return to_route('dashboards.admin.users.users_index')->with('message', 'User updated successfully!');
         
     }
 }
