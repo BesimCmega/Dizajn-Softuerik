@@ -43,9 +43,9 @@ class AdminController extends Controller
         return back()->with('message', 'User deleted.');
     }
 
-    public function show(User $user){
-    return view('dashboards.admin.users.users_index', compact('user'));
-    }
+    // public function show(User $user){
+    // return view('dashboards.admin.users.users_index', compact('user'));
+    // }
 
     //Store to Database
     public function storeinAdmin(Request $request) {

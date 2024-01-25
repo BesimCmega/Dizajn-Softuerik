@@ -47,7 +47,7 @@ Route::middleware(['auth', 'role:1'])->prefix('dashboards')->group(function () {
     Route::get('/admin/users/{user}/editUser', [AdminController::class, 'editUser'])->name('dashboards.admin.users.edit');
     Route::put('/admin/users/{user}', [AdminController::class, 'update'])->name('dashboards.admin.users.update');
     Route::delete('/users/{user}', [AdminController::class, 'destroy'])->name('dashboards.admin.users.destroy');
-    Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('dashboards.admin.users.show');
+    // Route::get('/admin/users/show/{user}', [AdminController::class, 'show'])->name('dashboards.admin.users.show');
 
     
 });
