@@ -26,7 +26,7 @@ class UserController extends Controller
     }
 
      //Employer Dashboard
-     public function indexEmployer() {
+    public function indexEmployer() {
         return view('dashboards.employer.index');
     }
 

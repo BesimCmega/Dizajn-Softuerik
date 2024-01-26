@@ -33,10 +33,10 @@ class ResumeController extends Controller
         if (Auth::check()) {
             // Use the authenticated user's ID for 'userid'
             $formFields['userid'] = Auth::id();
-    
+
             // Create the CV
             Resume::create($formFields);
-    
+
             return redirect()->route('dashboards.employer.index')->with('message', 'Resume created successfully!');
         }
     }
@@ -57,17 +57,17 @@ class ResumeController extends Controller
             'document' => 'nullable|string'
         ]);
 
-        if ($request->filled('document')) {
-            // If yes, update 'document' field in both the model and formFields
-            $resume->update(['document' => $formFields['document']]);
-        } else {
-            // If no new document, remove 'document' from the formFields array
-            unset($formFields['document']);
-        }
-    
+        // if ($request->filled('document')) {
+        //     // If yes, update 'document' field in both the model and formFields
+        //     $resume->update(['document' => $formFields['document']]);
+        // } else {
+        //     // If no new document, remove 'document' from the formFields array
+        //     unset($formFields['document']);
+        // }
+
         // Update the CV with the form fields
         $resume->update($formFields);
-    
+
         return to_route('dashboards.employer.index')->with('message', 'Resume updated successfully!');
     }
 }
