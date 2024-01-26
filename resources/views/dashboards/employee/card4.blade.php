@@ -27,7 +27,7 @@
         </div>
 
         <div class="flex justify-center pt-2 bg-blue-200 pb-2">
-            <p class="font-bold">Company Logo: <img src="/images/insta.png" class="h-20 w-20" alt=""></p>
+            <p class="font-bold">Company Logo: <img src="/images/Googl.png" class="h-20 w-20" alt=""></p>
           </div>
 
         <div class="flex justify-center pt-4">
