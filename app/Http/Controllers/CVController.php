@@ -61,19 +61,19 @@ class CvController extends Controller
             'phonenumber' => 'required',
             'document' => 'nullable|string', // Assuming 'document' is a string field
         ]);
-    
+
         // Check if a new document is provided
-        if ($request->filled('document')) {
-            // If yes, update 'document' field in both the model and formFields
-            $cv->update(['document' => $formFields['document']]);
-        } else {
-            // If no new document, remove 'document' from the formFields array
-            unset($formFields['document']);
-        }
-    
+        // if ($request->filled('document')) {
+        //     // If yes, update 'document' field in both the model and formFields
+        //     $cv->update(['document' => $formFields['document']]);
+        // } else {
+        //     // If no new document, remove 'document' from the formFields array
+        //     unset($formFields['document']);
+        // }
+
         // Update the CV with the form fields
         $cv->update($formFields);
-    
+
         return redirect()->route('dashboards.employee.index')->with('message', 'CV updated successfully!');
     }
 
