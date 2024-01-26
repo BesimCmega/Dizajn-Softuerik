@@ -12,8 +12,8 @@
     <nav class="bg-white border-gray-200 dark:bg-gray-900">
         <div class="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
           <a href="/" class="flex items-center space-x-3 rtl:space-x-reverse">
-              <img src="https://flowbite.com/docs/images/logo.svg" class="h-8" alt="Flowbite Logo" />
-              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Job-Application</span>
+              <img src="../images/bitmap.png" style="width: 50px" alt="Flowbite Logo" />
+              <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Merr Pune</span>
           </a>
           <button data-collapse-toggle="navbar-default" type="button" class="inline-flex items-center p-2 w-10 h-10 justify-center text-md text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600" aria-controls="navbar-default" aria-expanded="false">
               <span class="sr-only">Open main menu</span>
@@ -26,7 +26,7 @@
               <li>
                 <a href="/" class="block py-2 px-3 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Home</a>
               </li>
-              
+
               <li>
                 <a href="sign-in" class="block py-2 px-3 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white md:dark:text-blue-500" aria-current="page">Sign In</a>
               </li>
@@ -47,7 +47,7 @@
         <a href="#" class="text-3xl text-white hover:text-laravel font-steelfish font-bold"><i class="fa-solid fa-gear"></i>Jobs to Apply</a>
       </li>
     </div>
-    
+
     <div class="flex justify-around pt-16">
 
     <div class="flex-col items max-w-sm rounded overflow-hidden shadow-lg bg-blue-400">
@@ -60,7 +60,7 @@
       {{-- <div class="flex justify-center pt-4 px-3 ">
        <span> <span class="font-bold">Experience Required:  </span>
       Minimum of 3 years of experience in full-stack development.
-      Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span> 
+      Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span>
       </div> --}}
       <div class="flex justify-center pt-4">
         <p class="font-bold"> Company name: Google</p>
@@ -76,7 +76,7 @@
       <div class="px-6 py-4 bg-blue-200 h-64">
         <div class="font-bold text-xl mb-2">Customer Support Specialist</div>
         <p class="text-gray-700 text-base">
-          We are looking for a skilled Digital Marketing Specialist to join our marketing team. As a Digital Marketing Specialist, you will be responsible for developing and executing digital marketing strategies to increase brand awareness and drive customer engagement. 
+          We are looking for a skilled Digital Marketing Specialist to join our marketing team. As a Digital Marketing Specialist, you will be responsible for developing and executing digital marketing strategies to increase brand awareness and drive customer engagement.
         </p>
       </div>
       <div class="flex justify-center pt-4">
@@ -106,10 +106,10 @@
       </div>
     </div>
 
-   
-      
+
+
     </div>
-   
+
     <div class="flex justify-around pt-32">
 
       <div class="flex-col items max-w-sm rounded overflow-hidden shadow-lg bg-blue-400">
@@ -122,7 +122,7 @@
         {{-- <div class="flex justify-center pt-4 px-3 ">
          <span> <span class="font-bold">Experience Required:  </span>
         Minimum of 3 years of experience in full-stack development.
-        Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span> 
+        Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span>
         </div> --}}
         <div class="flex justify-center pt-4">
           <p class="font-bold"> Company name: Google</p>
@@ -133,7 +133,7 @@
         </button>
         </div>
       </div>
-  
+
       <div class="flex-col items max-w-sm rounded overflow-hidden shadow-lg bg-blue-400">
         <div class="px-6 py-4 bg-blue-200 h-64">
           <div class="font-bold text-xl mb-2">Network Security Engineer</div>
@@ -167,9 +167,9 @@
         </button>
         </div>
       </div>
-  
-     
-        
+
+
+
       </div>
       <x-flash-message />
 </body>
