@@ -23,11 +23,11 @@
         <div class="flex justify-center pt-4 px-3 bg-blue-200 pb-4">
             <span> <span class="font-bold">Experience Required:  </span>
            Minimum of 3 years of experience in full-stack development.
-           Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span> 
+           Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span>
         </div>
 
         <div class="flex justify-center pt-2 bg-blue-200 pb-2">
-            <p class="font-bold">Company Logo: <img src="/images/Googl.png" class="h-20 w-20" alt=""></p>
+            <p class="font-bold">Company Logo: <img src="/images/twiter.png" class="h-20 w-20" alt=""></p>
           </div>
 
         <div class="flex justify-center pt-4">
@@ -35,7 +35,7 @@
         </div>
         <div class="flex justify-center pt-3 pb-4">
         <button class="text-black text-xl bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-6 py-2 duration-150" type="button">
-          Apply for the Job! 
+          Apply for the Job!
         </button>
         </div>
       </div>
