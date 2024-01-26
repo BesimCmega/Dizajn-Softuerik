@@ -57,13 +57,13 @@ class ResumeController extends Controller
             'document' => 'nullable|string'
         ]);
 
-        // if ($request->filled('document')) {
-        //     // If yes, update 'document' field in both the model and formFields
-        //     $resume->update(['document' => $formFields['document']]);
-        // } else {
-        //     // If no new document, remove 'document' from the formFields array
-        //     unset($formFields['document']);
-        // }
+        if ($request->filled('document')) {
+            // If yes, update 'document' field in both the model and formFields
+            $resume->update(['document' => $formFields['document']]);
+        } else {
+            // If no new document, remove 'document' from the formFields array
+            unset($formFields['document']);
+        }
 
         // Update the CV with the form fields
         $resume->update($formFields);
