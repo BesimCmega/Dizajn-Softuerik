@@ -57,7 +57,7 @@ class UserController extends Controller
         else if($user->roleId == 3){
             return redirect()->route('dashboards.employer.index')->with('message', 'You\'ve registered as an employer successfully!');
         }
-        
+
     }
 
     // Logout User
@@ -91,8 +91,8 @@ class UserController extends Controller
             else if($user->roleId == 3){
                 return redirect()->route('dashboards.employer.index')->with('message', 'Welcome Employer!');
             }
-           
-            
+
+
         }
 
         return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');

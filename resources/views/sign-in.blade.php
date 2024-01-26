@@ -61,13 +61,7 @@
         @enderror
     </div>
 
-    <div class="pb-2">
-        <p class="text-center text-md pt-2 text-gray-500">Did you forget your password?
-          <a href="sign-up"
-              class="font-steelfish text-gray-300 hover:underline focus:text-gray-800 focus:outline-none">Forget password
-          </a>.
-      </p>
-      </div>
+
 
     <div class="grid md:grid-cols-2 md:gap-6 justify-center">
 
