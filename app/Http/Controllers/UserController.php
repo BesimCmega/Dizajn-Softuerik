@@ -54,9 +54,9 @@ class UserController extends Controller
             return redirect()->route('dashboards.employee.index')->with('message', 'You\'ve registered as an employee successfully!');
         }
 
-        else if($user->roleId == 3){
-            return redirect()->route('dashboards.employer.index')->with('message', 'You\'ve registered as an employer successfully!');
-        }
+        // else if($user->roleId == 3){
+        //     return redirect()->route('dashboards.employer.index')->with('message', 'You\'ve registered as an employer successfully!');
+        // }
 
     }
 
