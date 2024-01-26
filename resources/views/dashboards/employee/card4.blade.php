@@ -14,7 +14,7 @@
 
     <div class="flex-col items max-w-3xl rounded overflow-hidden shadow-lg bg-blue-400">
         <div class="px-6 py-4 bg-blue-200 h-30">
-          <div class="font-bold text-xl mb-2">Network Security Engineer</div>
+          <div class="font-bold text-xl mb-2">UX/UI Designer</div>
           <p class="text-gray-700 text-base">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Qui possimus neque suscipit quae quis quasi expedita. Reiciendis eveniet quasi, voluptates fugit omnis rerum deleniti exercitationem maiores sit ducimus asperiores repellendus?
         </p>
@@ -22,8 +22,8 @@
 
         <div class="flex justify-center pt-4 px-3 bg-blue-200 pb-4">
             <span> <span class="font-bold">Experience Required:  </span>
-           Minimum of 3 years of experience in full-stack development.
-           Proficient in JavaScript, HTML, CSS, and at least one modern front-end framework (e.g., React, Angular, Vue). </span>
+           Minimum of 3 years of experience in design.
+           Proficient in JavaScript, HTML, CSS, and UI and UX. </span>
         </div>
 
         <div class="flex justify-center pt-2 bg-blue-200 pb-2">
@@ -31,7 +31,7 @@
           </div>
 
         <div class="flex justify-center pt-4">
-          <p class="font-bold"> Company name: Twitter</p>
+          <p class="font-bold"> Company name: Google</p>
         </div>
         <div class="flex justify-center pt-3 pb-4">
         <button class="text-black text-xl bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-6 py-2 duration-150" type="button">

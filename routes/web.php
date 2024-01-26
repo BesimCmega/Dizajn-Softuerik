@@ -66,6 +66,7 @@ Route::middleware(['auth', 'role:2'])->prefix('dashboards')->group(function () {
     Route::get('/employee/card1', [CvController::class, 'card1'])->name('dashboards.employee.card1');
     Route::get('/employee/card2', [CvController::class, 'card2'])->name('dashboards.employee.card2');
     Route::get('/employee/card3', [CvController::class, 'card3'])->name('dashboards.employee.card3');
+    Route::get('/employee/card4', [CvController::class, 'card4'])->name('dashboards.employee.card4');
 });
 
 //Dashboard Employer
