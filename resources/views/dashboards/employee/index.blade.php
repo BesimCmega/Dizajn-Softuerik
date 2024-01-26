@@ -114,7 +114,7 @@
           </div>
           <div class="flex justify-center pt-3 pb-4">
           <button class="text-black text-xl bg-transparent border border-solid border-blue-500 hover:bg-blue-500 hover:text-white active:bg-blue-600 font-bold uppercase px-6 py-2 duration-150" type="button">
-            <a href= "{{ route('dashboards.employee.card3') }}">Learn More</a>
+            <a href= "{{ route('dashboards.employee.card5') }}">Learn More</a>
           </button>
           </div>
         </div>
