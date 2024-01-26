@@ -59,7 +59,7 @@ class CvController extends Controller
             'experience' => 'required',
             'education' => 'required',
             'phonenumber' => 'required',
-            // 'document' => 'nullable|string', // Assuming 'document' is a string field
+            'document' => 'nullable|string', // Assuming 'document' is a string field
         ]);
 
         // Check if a new document is provided
