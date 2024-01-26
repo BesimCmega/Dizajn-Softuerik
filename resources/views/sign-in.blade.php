@@ -61,16 +61,20 @@
         @enderror
     </div>
 
-    <a href="editPassword"
-    class="font-steelfish text-gray-300 hover:underline focus:text-gray-800 focus:outline-none">Forget password?
-    </a>
+    <div class="pb-2">
+        <p class="text-center text-md pt-2 text-gray-500">Did you forget your password?
+          <a href="sign-up"
+              class="font-steelfish text-gray-300 hover:underline focus:text-gray-800 focus:outline-none">Forget password
+          </a>.
+      </p>
+      </div>
 
     <div class="grid md:grid-cols-2 md:gap-6 justify-center">
 
       <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-md w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Sign In</button>
     </div>
     <div class="h-96">
-      <p class="text-center text-md pt-2 text-gray-500">Don&#x27;t have an account yet?
+      <p class="text-md pt-2 text-gray-500">Don&#x27;t have an account yet?
         <a href="sign-up"
             class="font-steelfish text-gray-300 hover:underline focus:text-gray-800 focus:outline-none">Sign up
         </a>.
