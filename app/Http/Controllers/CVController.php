@@ -111,7 +111,7 @@ class CvController extends Controller
 
     public function card5(){
         if(auth()->user()->cv){
-            return view('dashboards.employee.card4');
+            return view('dashboards.employee.card5');
         }else{
             return view('dashboards.employee.cv');
         }
