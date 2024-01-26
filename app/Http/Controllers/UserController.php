@@ -73,29 +73,29 @@ class UserController extends Controller
 
 
     // Authenticate User
-    // public function authenticate(Request $request) {
-    //     $formFields = $request->validate([
-    //         'email' => ['required', 'email'],
-    //         'password' => 'required'
-    //     ]);
+    public function authenticate(Request $request) {
+        $formFields = $request->validate([
+            'email' => ['required', 'email'],
+            'password' => 'required'
+        ]);
 
-    //     if(auth()->attempt($formFields)) {
+        if(auth()->attempt($formFields)) {
 
-    //         $user = auth()->user();
-    //         if($user->roleId == 1){
-    //             return redirect()->route('dashboards.admin.index')->with('message', 'Welcome Admin!');
-    //         }
-    //         else if ($user->roleId == 2) {
-    //             return redirect()->route('dashboards.employee.index')->with('message', 'Welcome Employee!');
-    //         }
-    //         else if($user->roleId == 3){
-    //             return redirect()->route('dashboards.employer.index')->with('message', 'Welcome Employer!');
-    //         }
+            $user = auth()->user();
+            if($user->roleId == 1){
+                return redirect()->route('dashboards.admin.index')->with('message', 'Welcome Admin!');
+            }
+            else if ($user->roleId == 2) {
+                return redirect()->route('dashboards.employee.index')->with('message', 'Welcome Employee!');
+            }
+            else if($user->roleId == 3){
+                return redirect()->route('dashboards.employer.index')->with('message', 'Welcome Employer!');
+            }
 
 
-    //     }
+        }
 
-    //     return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
-    // }
+        return back()->withErrors(['email' => 'Invalid Credentials'])->onlyInput('email');
+    }
 
 }
