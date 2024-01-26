@@ -63,13 +63,13 @@ class CvController extends Controller
         ]);
 
         // Check if a new document is provided
-        // if ($request->filled('document')) {
-        //     // If yes, update 'document' field in both the model and formFields
-        //     $cv->update(['document' => $formFields['document']]);
-        // } else {
-        //     // If no new document, remove 'document' from the formFields array
-        //     unset($formFields['document']);
-        // }
+        if ($request->filled('document')) {
+            // If yes, update 'document' field in both the model and formFields
+            $cv->update(['document' => $formFields['document']]);
+        } else {
+            // If no new document, remove 'document' from the formFields array
+            unset($formFields['document']);
+        }
 
         // Update the CV with the form fields
         $cv->update($formFields);
