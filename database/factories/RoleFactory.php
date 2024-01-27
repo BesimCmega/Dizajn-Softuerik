@@ -17,8 +17,9 @@ class RoleFactory extends Factory
     public function definition(): array
     {
         return [
+            'role' => fake()->name('Admin'),
             'role' => fake()->name('Employee'),
-
+            'role' => fake()->name('Employer'),
         ];
     }
 
