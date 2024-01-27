@@ -20,17 +20,23 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
-        Roles::create([
-            'role' => 'Admin'
-        ]);
-        
-        Roles::create([
-            'role' => 'Employee'
-        ]);
+        Roles::factory(3)->create();
 
-        Roles::create([
-            'role' => 'Employer'
-        ]);
+        // Roles::factory()->create(['role' => 'Admin']);
+        // Roles::factory()->create(['role' => 'Employee']);
+        // Roles::factory()->create(['role' => 'Employer']);
+
+        // Roles::create([
+        //     'role' => 'Admin'
+        // ]);
+        
+        // Roles::create([
+        //     'role' => 'Employee'
+        // ]);
+
+        // Roles::create([
+        //     'role' => 'Employer'
+        // ]);
 
        
     }

@@ -1,13 +1,13 @@
 <?php
 
+// RoleFactory.php
+
 namespace Database\Factories;
 
+use App\Models\Roles;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
-/**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Model>
- */
-class RoleFactory extends Factory
+class RolesFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -16,11 +16,14 @@ class RoleFactory extends Factory
      */
     public function definition(): array
     {
+        // Define roles in a specific order
+        static $roles = ['Admin', 'Employee', 'Employer'];
+
         return [
-            'role' => fake()->name('Admin'),
-            'role' => fake()->name('Employee'),
-            'role' => fake()->name('Employer'),
+            'role' => array_shift($roles), // Take the next role from the array
         ];
     }
-
 }
+
+
+
