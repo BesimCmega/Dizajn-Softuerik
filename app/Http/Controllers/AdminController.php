@@ -2,13 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 
-class AdminController extends Controller
+class AdminController extends Controller implements UserInterface
 {
     
+
     public function indexAdmin() {
         return view('dashboards.admin.index');
     }
@@ -63,6 +65,7 @@ class AdminController extends Controller
 
         // Create User
         $user = User::create($formFields);
+        
 
         return to_route('dashboards.admin.users.users_index')->with('message', 'User created successfully!');
         
