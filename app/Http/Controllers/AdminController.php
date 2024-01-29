@@ -25,10 +25,10 @@ class AdminController extends Controller implements UserInterface
         return view('dashboards.admin.users.create');
     }
     
-    // Show Edit User Form
-    public function edit(User $user) {
-        return view('dashboards.admin.users.edit', compact('user'));
-    }
+    // // Show Edit User Form
+    // public function edit(User $user) {
+    //     return view('dashboards.admin.users.edit', compact('user'));
+    // }
     
     public function editUser($id){
         $user = User::findOrFail($id);
