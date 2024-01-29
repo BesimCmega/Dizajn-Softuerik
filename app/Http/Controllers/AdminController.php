@@ -2,34 +2,47 @@
 
 namespace App\Http\Controllers;
 
-use App\Interfaces\UserInterface;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
+use App\Interfaces\UserInterface;
+use App\Repository\AdminRepository;
 
-class AdminController extends Controller implements UserInterface
+class AdminController extends Controller
 {
-    
+    private $adminRepository;
+
+    public function __construct(AdminRepository $adminRepository)
+    {
+        $this->adminRepository = $adminRepository;
+    }
 
     public function indexAdmin() {
         return view('dashboards.admin.index');
     }
 
     public function indexUsers(){
-        $users = User::all();
-        return view('dashboards.admin.users.users_index', compact('users'));
+        return $this->adminRepository->indexUsers();
     }
+
+    // public function indexUsers(){
+    //     $users = User::all();
+    //     return view('dashboards.admin.users.users_index', compact('users'));
+    // }
 
     // Show Create Form
     public function createUser() {
         return view('dashboards.admin.users.create');
     }
     
-    
     public function editUser($id){
-        $user = User::findOrFail($id);
-        return view('dashboards.admin.users.editUser', compact('user'));
+        return $this->adminRepository->editUser($id);
     }
+
+    // public function editUser($id){
+    //     $user = User::findOrFail($id);
+    //     return view('dashboards.admin.users.editUser', compact('user'));
+    // }
     
     
     public function destroy(User $user){
