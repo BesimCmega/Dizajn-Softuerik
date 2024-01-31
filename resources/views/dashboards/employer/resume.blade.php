@@ -51,7 +51,7 @@
     </div>
     @endif
 
-</button>
+
     <x-flash-message />
 </body>
 </html>
