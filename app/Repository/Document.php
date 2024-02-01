@@ -9,12 +9,13 @@ use App\Repository\IDocumentsManager;
 
 class Document implements IDocumentsManager
 {
+    private String $description;
+    
     public function __construct($description)
     {
         $this->setDescription($description);
     }
 
-    private String $description;
 
     public function getDescription()
     {
